@@ -1,0 +1,76 @@
+<!Doctype html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dom</title>
+	<style>
+	#demo, #demo1, #demo2 {
+    display:none;
+}
+   
+   
+	</style>
+</head>
+<body>
+<p>
+<input type="text" id="in" onkeypress="inp()" value="" placeholder="enter text">
+<p id="inp">Change p value with input</p>
+</p>
+<p>JavaScript is one of the 3 languages all web developers must learn:</p>
+<p><label><p><input type="checkbox" name="a" id="ch"></label><p id="demo">1. HTML to define the content of web pages</p></p>
+<label><p><input type="checkbox" name="b" id="ck"></label><p id="demo1">2. CSS to specify the layout of web pages</p></p>
+<label><p><input type="checkbox" name="c"id="box"><p id="demo2"> 3. JavaScript to program the behavior of web pages</p></p></label> 
+</p>
+</div>
+</div>
+<script>
+//in p tag write value of text after each change
+function inp(){
+var input=document.getElementById("in").value;
+var p = document.getElementById("inp");
+p.innerHTML=input;
+} 
+//show hide
+
+document.getElementById("ch").addEventListener("click",checkBox);
+document.getElementById("ck").addEventListener("click", checkBox);
+document.getElementById("box").addEventListener("click", checkBox);
+function checkBox(){
+    var chk1=document.getElementById("ch");
+    var text = document.getElementById("demo");
+	var chk2=document.getElementById("ck");
+    var text1 = document.getElementById("demo1");
+	var chk3=document.getElementById("box");
+    var text2 = document.getElementById("demo2");
+    if (chk1.checked == true){
+        text.style.display = "block";
+		// text1.style.display = "none";
+		 //text2.style.display = "none";
+		text.style.color="blue";
+		text.style.fontSize="30px";
+    } else {
+       text.style.display = "none";
+    }
+	
+	 if (chk2.checked == true){
+        text1.style.display = "block";
+		//text.style.display = "none";
+		//text2.style.display = "none";
+		text1.style.color="purple";
+		text1.style.fontSize="30px";
+    } else {
+       text1.style.display = "none";
+    }
+	 if (chk3.checked == true){
+        text2.style.display = "block";
+		//text1.style.display = "none";
+		//text.style.display = "none";
+		text2.style.color="yellow";
+		text2.style.fontSize="30px";
+		
+    } else {
+       text2.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>

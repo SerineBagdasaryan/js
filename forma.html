@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<style>
+	body {
+	background-color: lightblue;
+	}
+	#forma {
+    width: 500px;
+    background-color: #e6ffff;
+    margin: auto;
+}
+      fieldset {
+    margin: auto;
+    width: 70%;
+ 
+}
+    #sbm, #but{
+    background-color: #33cc33;
+	 cursor: pointer;
+	 height: 30px;
+	 width:80px;
+    border-radius: 20px;
+    color: white;
+	 margin: auto;
+}
+#demo, #demo1, #demo2 {
+display:none;
+}
+</style>
+</head>
+<body>
+<input type="text" id="in" onkeypress="inp()" value="">
+<p id="inp">some text</p>
+<form id="forma">
+<fieldset>
+<legend>Personal data</legend>
+<p><input type="text" placeholder="Name" name="name" id="name" value=""></p>
+<p><input type="text" placeholder="Surname" name="surname" id="sur" value=""></p>
+<p><input type="password" placeholder="Password" name="passw" id="pas" value=""></p>
+<p><input type ="number" id="ph" name="phone" placeholder="phone" value =""></p>
+<p><input type="login" id="lg" name="login" placeholder="login" value=""></p>
+<p><input type="email" id="em" name="email" placeholder="email" value=""></p>
+  <p><input type="radio" name="gender" value="male" id="m"> Male
+  <input type="radio" name="gender" value="female" id="f"> Female</p>
+<p><button id="but">Click here</button></p>
+</fieldset>
+<fieldset>
+<legend>Information</legend>
+<p>You want to learn?</p>
+<p><label><input type="checkbox" name="checkbox" id="chh" value="yes">Yes</label>
+<p><label><input type="checkbox" name="checkbox" id="che" value="no">No</label>
+<p>JavaScript is one of the 3 languages all web developers must learn:</p>
+<p><label><input type="checkbox" name="a" id="ch"></label>
+<label><input type="checkbox" name="b" id="ck"></label>
+<label><input type="checkbox" name="c"id="box"></label> 
+<p id="demo">1. HTML to define the content of web pages</p>
+<p id="demo1">2. CSS to specify the layout of web pages</p>
+<p id="demo2"> 3. JavaScript to program the behavior of web pages</p></p>
+<p><p>What is programing language do you prefer?</p>
+ <select id="sel">
+<option value="Java script" selected>Js</option>
+<option  value="Php">Php</option>
+<option value="Java">Java</option>
+<option value="Python">Python</option>
+<option value="Perl"> Perl</option>
+</select></p>
+<p><label for="text"></label>
+<p>Your message</p>
+<textarea  id="text" name="message" cols="20" rows="5" value=""></textarea></p></fieldset>
+<p><input type="submit" value="submit" id="sbm">
+</p>
+</form>
+<script>
+function inp(){
+var input=document.getElementById("in").value;
+var p = document.getElementById("inp");
+p.innerHTML=input;
+} 
+/*document.getElementById('demo1').innerHTML=user.lastname;
+--checkbox
+alert checkbox (checked item) value when it changes
+
+in p tag write value of text after each change
+
+*/
+//document.getElementById("but").onclick = data;
+document.getElementById("but").addEventListener("click",data);
+function data(){
+var n = document.getElementById("name").value;
+var s = document.getElementById("sur").value;
+var ps = document.getElementById("pas").value;
+var num = document.getElementById("ph").value;
+var log = document.getElementById("lg").value;
+var eml = document.getElementById("em").value;
+var m = document.getElementById("m").value;
+var f = document.getElementById("f").value;
+ if (n == "" || s == "" || ph == "" || num == "" || log == "" || eml == "" ||( m== "" && f== "")){
+   alert('Please fill data');
+        return false;
+ }else{
+alert("Your name is " + n + " Your surname is " + s + " Your password is " + ps +
+" Your phone number is " + num + " Your login is " + log + " Your email is " + eml + " Your gender is " + m);
+}
+}
+//շոու-հայդն
+
+document.getElementById("ch").addEventListener("click",checkBox);
+document.getElementById("ck").addEventListener("click", checkBox);
+document.getElementById("box").addEventListener("click", checkBox);
+function checkBox(){
+    var chk1=document.getElementById("ch");
+    var text = document.getElementById("demo");
+	var chk2=document.getElementById("ck");
+    var text1 = document.getElementById("demo1");
+	var chk3=document.getElementById("box");
+    var text2 = document.getElementById("demo2");
+    if (chk1.checked == true){
+        text.style.display = "block";
+		 text1.style.display = "none";
+		 
+       text2.style.display = "none";
+		text.style.color="blue";
+		text.style.fontSize="30px";
+    } else {
+       text.style.display = "none";
+    }
+	
+	 if (chk2.checked == true){
+        text1.style.display = "block";
+		text.style.display = "none";
+		text2.style.display = "none";
+		text1.style.color="purple";
+		text1.style.fontSize="30px";
+    } else {
+       text1.style.display = "none";
+    }
+	 if (chk3.checked == true){
+        text2.style.display = "block";
+		text1.style.display = "none";
+		text.style.display = "none";
+		text2.style.color="yellow";
+		text2.style.fontSize="30px";
+		
+    } else {
+       text2.style.display = "none";
+    }
+}
+document.getElementById("sel").addEventListener("change",selecte)
+function selecte() {
+var s = document.getElementById("sel").value;
+alert( "You prefer " + s);
+}
+
+
+document.getElementById("chh").addEventListener("click",check)
+function check() {
+var c = document.getElementById("chh").value;
+alert(c);
+}
+document.getElementById("che").addEventListener("click",check1);
+function check1() {
+var chek = document.getElementById("che").value;
+alert(chek);
+}
+document.getElementById("sbm").addEventListener("click", textArea);
+function textArea() {
+var t = document.getElementById("text").value;
+alert(t);
+}
+
+</script>
+</body>
+</html>
