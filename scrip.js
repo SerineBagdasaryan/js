@@ -61,7 +61,7 @@ $.getJSON('test.json', function(data) {
     $('<select/>', {
             'class': 'my-new-list',
           
-    html: items
+    html: items;
 }).appendTo('body');
     $(".my-new-list").change(function(){
         alert($(".my-new-list :selected").html());
