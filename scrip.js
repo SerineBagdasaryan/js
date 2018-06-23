@@ -49,26 +49,19 @@ var array = ["Afghanistan", "Åland Islands", "Albania", "Algeria", "American Sa
 
 
     var jsonText = JSON.stringify(array);
-//console.log(jsonText);
-
-
-localStorage.setItem("test", jsonText);
-text = localStorage.getItem("test");
-obj = JSON.parse(text);
-
-//console.log(obj)
+console.log(jsonText);
 
 
 $.getJSON('test.json', function(data) {
-    var items = [];
+    var items ="";
     $.each(data, function(key, val) {
 
-        items.push('<option id="' + key + '">' + val + '</option>');
+        items+=('<option id="' + key + '">' + val + '</option>');
     })
     $('<select/>', {
             'class': 'my-new-list',
-            'name': 'mySelect[]',
-    html: items.join('')
+          
+    html: items
 }).appendTo('body');
     $(".my-new-list").change(function(){
         alert($(".my-new-list :selected").html());
