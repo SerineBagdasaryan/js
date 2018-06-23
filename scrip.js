@@ -47,8 +47,7 @@ var array = ["Afghanistan", "Åland Islands", "Albania", "Algeria", "American Sa
     "Virgin Islands, British", "Virgin Islands, U.s.", "Wallis And Futuna",
     "Western Sahara", "Yemen", "Zambia", "Zimbabwe"]
 
-
-    var jsonText = JSON.stringify(array);
+   var jsonText = JSON.stringify(array);
 console.log(jsonText);
 
 
@@ -61,7 +60,7 @@ $.getJSON('test.json', function(data) {
     $('<select/>', {
             'class': 'my-new-list',
           
-    html: items;
+    html: items
 }).appendTo('body');
     $(".my-new-list").change(function(){
         alert($(".my-new-list :selected").html());
