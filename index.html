@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product object</title>
+   </head>
+ <body>
+	 <script>
+	 var prod={
+	title:"Car",
+	price:'60000',
+	image:"",
+	colors:["white", "black","blue"],
+	prodDate: new Date('2017-12-5'),
+	carDesc:{ "name":"BMW", "models":"X6",},
+    prodGuar: function (){
+	return (this.prodDate.getFullYear() + 3);
+	},
+	discount: function(){
+	return (this.price*5/100);
+	}
+}
+var html = "";
+	for(var prop in prod){
+				if(prop == "image"){
+					html += "<img src=bmw.jpg>";
+					html+="<img src=bmw1.jpg>"
+					html+="<img src=bmw2.jpg>"
+			
+				}
+	}		
+var x="";
+	for(var i in prod) {
+   for (var j in prod[i])  {
+       if(prod[i] == prod.colors){
+           x+=(prod[i][j] + ' ');
+       }
+   }
+}
+var y="";
+  	for(var key in prod) {
+   for (var pro in prod[key])  {
+       if(prod[key] == prod.carDesc){
+           y+=(prod[key][pro]);
+       }
+   }
+}
+  
+document.write('Product is ' + prod.title +' ' + y + '<br>' +
+'Price is '+ prod.price+ '$'+'<br>'+
+ 'We have a discount ' +prod.discount()+ '$'+'<br>'+
+ 'Cars is produce in '+ prod.prodDate+'<br>'+	
+'We have a guarante to '+ prod.prodGuar()+ '<br>'+
+'We have a this colors ' + x+'<br>' +
+"Hurry up until it's over" + '<br>' + '<br>'+ html);
+		 
+		 
+		 
+</script>
+ </body>
+ </html>
