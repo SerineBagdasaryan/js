@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Create Product</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <style>
+ #form{
+ display:none;
+ }
+ </style>
+  </head>
+<body>
+<div class="container">
+<div class="jumbotron text-center">
+<div class="col-md-6" id="div"> 
+ <h2>No data</h2>
+    <button type="button" class="btn btn-success"  id="but">Create data</button>
+	</div>
+  <form id="form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="prodName" placeholder="productName" name="name">
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" id="price" placeholder="Product price" name="productprice">
+    </div>
+       <div class="form-group">
+      <label for="prod">Product date</label>
+      <input type="date" class="form-control" id="proDat" placeholder="Product data" name="productdata">
+    </div>
+       <div class="form-group">
+      <label for="">Product exp</label>
+      <input type="date" class="form-control" id="prodExp" placeholder="Product exp" name="productexp">
+    </div>
+<div class="form-group">
+	    <button type="button"  id="myBtn" class="btn btn-success">Save</button>
+     <input class="btn btn-primary" type="reset" value="Reset">
+    </div>
+ </form>
+        </div>
+        
+      </div>
+<script>
+document.getElementById("but").addEventListener("click",createData);
+document.getElementById("but").addEventListener("click", hideDiv);
+function hideDiv(){
+document.getElementById("div").style.display="none";
+}
+function createData() {
+document.getElementById("form").style.display="block";
+}
+
+var button= document.getElementById("myBtn");
+button.addEventListener("click", productValidation);
+
+var array=[];
+var objectProducts={};
+function productValidation(){
+	var name=document.getElementById("prodName").value;
+	var price=document.getElementById("price").value;
+	var productDate =document.getElementById("proDat").value;
+	var productExp =document.getElementById("prodExp").value;
+		if(name != "" || price != "" || productDate != "" || productExp != ""){
+		var regName = /[^A-Za-z]/;
+		if(name.match(regName)){
+		alert("Enter a name");
+		return false;
+		}
+
+		var regPrice = /^\d+$/;
+		if (!price.match(regPrice)) {
+
+		alert("Enter a number");
+		return false;
+		}
+	    var regProd= new Date(productDate);
+		var dayProd = regProd.getDate();
+		var monthProd= regProd.getMonth();
+		var yearProd = regProd.getFullYear();
+
+		var productExp = new Date(productExp);
+		var prodDay = productExp.getDate();
+		var prodMonth =productExp.getMonth();
+		var prodYear = productExp.getFullYear();
+
+		if ((prodDay - dayProd > 3) || (prodMonth - monthProd >= 1) || (yearProd!=prodYear )) {
+		alert("The product is not term");
+		return false;
+		}
+	} else {
+		alert("Please fill all fields");
+		return false;
+	}
+
+		
+            objectProducts.name=document.getElementById("prodName").value;
+			objectProducts.price=document.getElementById("price").value;
+			objectProducts.productDate =document.getElementById("proDat").value;
+			objectProducts.productExp=document.getElementById("prodExp").value;
+
+			array.push(objectProducts);
+			//console.log(array);
+			var table="";
+			table+=("<table border='1px' id='table' style='width:700px height:400px'>");
+			for(var key in array){
+			table+=("<tr><th>Name</th><th>Price</th><th>ProductDate</th><th>ProductExp</th><th>Action</th><th>Action</th</tr>");
+			 table+=("<tr style='width:200px;height:20px'>");
+				for (var prop in array[key]){
+	            table+=("<td style='width:200px height: 100px'>" + array[key][prop]+"</td>");
+				//alert(array[key][prop]);
+				}
+				     table+=("<td style='width:200px height: 100px'>" +("<button  class='delete' style='background-color:red'>Delete</button>") +"</td>");
+				     table+=("<td style='width:200px height: 100px'>" +("<button class='edit' style='background-color:green'>Edit</button>") +"</td>");
+	             
+				   table+=("</tr>");
+			
+				}
+					     // table+=("<button style='background-color:green'>Create product</button>")
+				
+			table+=("</table>");
+			 document.write(table);
+			 
+$(".delete").click(function(){
+                       $(this).closest('tr').remove();
+                   });
+	   
+
+
+    $(".edit").click(function(){
+        $("form").show();
+    });
+
+}
+	button.addEventListener("click", hideForm);	
+  function hideForm() {
+ document.getElementById("form").style.display="none";
+    
+					
+}
+
+	function show() {
+ document.getElementById("form").style.display="block";
+	}
+	
+</script>
+</body>
+</html>
