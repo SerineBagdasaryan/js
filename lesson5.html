@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>AngularJS Forms</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+	body {
+    background-color:#b3e6ff;
+}
+#register {
+    width: 500px;
+    background-color: white;
+    margin: auto;
+    display: block;
+    margin-top: 70px;
+}
+#register h2 {
+    text-align: center;
+    padding-top: 20px;
+    margin: 0;
+}
+.title {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+}
+.registerDiv {
+    margin: 0 auto;
+    width: 60%;
+}
+.registerDiv input {
+    margin: 5px 0px;
+    width: 100%
+}
+
+.btn {
+    background-color: #00cc99;
+    border: none;
+    height: 30px;
+    border-radius: 100px;
+    color: white;
+}
+
+.btn:hover {
+ cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="row" ng-app="myApp" ng-controller="maincntrl">
+<div class="jumbotron text-center">
+<div class="col-md-6"> 
+<div class="col-md-offset-3 col-md-6 col-sm-12" style="margin-top:10px;">
+<form ng-submit="info()" id="register">
+        <h2>Angular Form</h2>
+        <div class="registerDiv">
+<div class="form-group">
+<label id="label" class="control-label">First Name:</label>
+<input type="text" class="form-control" ng-model="person.firstname" placeholder="Enter First Name">
+</div>
+<div class="form-group">
+      <label for="price">Surname</label>
+      <input type="text" class="form-control" placeholder="Surname" ng-model="person.surname" required>
+<label for="radio">Enter email</label>
+<input type="radio" ng-model="person.mail" ng-value="true" class="form-control bg-write radio" >
+<label for="radio">Hide email</label>
+<input type="radio"  ng-model="person.mail" ng-value="false" class="form-control radio" >
+<label for="email" ng-show="person.mail" required> Email:</label>
+<input type="email" ng-show="person.mail" ng-model="person.email" name="myAddress" class="form-control" placeholder="Email">
+<br><br/>
+<div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+<div class="form-group">
+<label id="label" class="control-label">Message:</label>
+<textarea type="textarea" rows="2" cols="50" class="form-control" ng-model="person.message" placeholder="People who read much know much"></textarea>
+</div>
+<div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" ng-model="person.cheked1" ng-value="true" type="checkbox" name="checkbox">Do you read books?
+      </label>
+    </div> 
+	<div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" ng-model="person.cheked2" ng-value="true" type="checkbox" name="checkbox">Do you listen music?
+      </label>
+    </div><br>
+	<label>What operating system you prefer?</label> 
+	<select ng-model="person.mySelect">
+<option ng-repeat="x in os" >{{x}}</option>
+</select>
+<div class="form-group">
+<input class="btn btn-warning" type="submit" value="Submit">
+<input class="btn btn-primary" type="reset" value="Reset">
+</div>
+</div>
+</form>
+</div>
+<div ng-style="myDiv" ng-show="submitS">
+{{formDate}}<br>
+</div>
+</div>
+<script>
+
+ var myApp = angular.module("myApp", []);
+myApp.controller("maincntrl", function ($scope) {
+   $scope.myDiv = {
+      "color" : "black",
+       "width":"100%",
+	  "margin-top":"20px",
+       "height":"200px",
+      "background-color" : "#ccffff"
+     
+  }
+    $scope.os=["Windows","Linux","Mac"];
+$scope.submitS = false;
+$scope.info = function () {
+$scope.formDate= angular.copy($scope.person);
+$scope.submitS= true;
+console.log($scope.person);
+}
+});
+</script>
+</body>
+</html>
