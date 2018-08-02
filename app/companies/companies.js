@@ -35,9 +35,9 @@ angular.module('myApp.companies', ['ngRoute'])
 
                 $scope.f = function(name,permalink,crunchbase_url,homepage_url) {
 
-                    $scope.myDatas=(name+'<br>'+
-                        permalink+'<br>'+crunchbase_url +'<br>'+homepage_url);
-                    document.write($scope.myDatas);
+                    $scope.myDatas=(name+''+
+                        permalink+''+crunchbase_url +''+homepage_url);
+                    
 
                     //sessionStorage["myData"] = angular.copy($scope.myDatas);
 

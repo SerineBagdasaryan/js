@@ -32,9 +32,9 @@ angular.module('myApp.restaurant', ['ngRoute'])
 
                 $scope.f = function(name,URL,address,outcode,postcode,rating,type_of_food) {
 
-                    $scope.myDatas=(name+'<br>'+
-                        URL+'<br>'+ address+'<br>'+ outcode+'<br>'+postcode+ "<br>" + rating + "<br>"+type_of_food);
-                    document.write($scope.myDatas);
+                    $scope.myDatas=(name+''+
+                        URL+''+ address+''+ outcode+''+postcode+ '' + rating + ''+type_of_food);
+                    
 
                     //sessionStorage["myData"] = angular.copy($scope.myDatas);
 

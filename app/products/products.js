@@ -32,9 +32,9 @@ angular.module('myApp.products', ['ngRoute'])
 
             $scope.f = function(name,price,montly_price,image,type,color) {
 
-                $scope.myDatas=(name+'<br>'+
-                    price+'<br>'+ montly_price+'<br>'+ type+'<br>'+color);
-                document.write($scope.myDatas);
+                $scope.myDatas=(name+''+
+                    price+''+ montly_price+''+ type+''+color);
+                
 
                 //sessionStorage["myData"] = angular.copy($scope.myDatas);
 
