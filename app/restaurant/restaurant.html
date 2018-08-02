@@ -1,0 +1,15 @@
+<div class="container" class="row">
+    <div class="col-sm-6" ng-repeat="item in product">
+
+        <div ng-click="f(item.name, item.URL, item.outcode, item.address, item.rating,item.type_of_food)"><h3>{{item.name}}</h3></div>
+        <div >{{item.type_of_food}}</div>
+        <div >{{item.address}}</div>
+
+    </div>
+</div>
+
+<div  data-pagination="" data-num-pages="numPages()"
+      data-current-page="currentPage" data-max-size="maxSize"
+      data-boundary-links="true">
+
+</div>

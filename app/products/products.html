@@ -1,0 +1,22 @@
+
+<div class="container" class="row">
+  <div class="col-sm-6" ng-repeat="item in product">
+
+    <div ng-click="f(item.name, item.price, item.monthly_price, item.image, item.type, item.color)"><h3>{{item.name}}</h3></div>
+
+    <div ><img src="{{item.image}}" ng-style="myimage"></div>
+    <div >{{item.price | currency}}</div>
+    <div >{{item.monthly_price | currency}}</div>
+
+  </div>
+</div>
+
+<div  data-pagination="" data-num-pages="numPages()"
+      data-current-page="currentPage" data-max-size="maxSize"
+      data-boundary-links="true">
+
+</div>
+
+
+
+
