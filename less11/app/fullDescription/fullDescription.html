@@ -5,10 +5,9 @@
             <img src="{{items.image}}" style="width: 350px; height: 250px; padding: 10px">
         </div>
         <div class="col-sm-4">
-
             <div ><img src="{{items.stars}}"style="width: 60px;height: 15px"></div>
-            <h3 style="color:#cc3333">{{items.price | currency: "$" : 0}}</h3>
-            <p style="color:gray;cursor: pointer">{{items.description}}</p>
+            <h5 style="color:#cc3333">{{items.price | currency: "$" : 0}}</h5>
+          <!--  <a ng-href="#!/http://localhost:8080/tours/{{items.id}}">{{items.description}}</a>-->
             <div class="row">
                 <div class="left" style= "background-color:#d9d9d9"><h6 style= "color:#404040"><i class="fa fa-clock-o" style="font-size:5px;color:gray"></i>
                     {{items.year}}</h6></div>
@@ -23,3 +22,5 @@
 
     </div>
 </div>
+
+

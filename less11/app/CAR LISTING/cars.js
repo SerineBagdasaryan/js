@@ -15,3 +15,9 @@ angular.module('myApp.cars', ['ngRoute'])
                 $scope.obj = response.data;
             });
     });
+   /* .controller('CarsCtrl', function($scope, $http) {
+        $http.get("http://localhost:8080/toursall")
+            .then(function(response) {
+                $scope.obj = response.data;
+            });
+    });*/

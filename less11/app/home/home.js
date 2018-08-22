@@ -9,5 +9,6 @@ angular.module('myApp.home', ['ngRoute'])
   });
 }])
 
-.controller('HomeCtrl','$scope' [function($scope) {
-}]);
+    .controller('HomeCtrl', function($scope, $http) {
+
+    });

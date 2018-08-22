@@ -2,9 +2,9 @@
 a, i, span {
     color:white;
 }
-a:hover {
+.red a:hover {
     text-decoration:none;
-    color:red;
+    background-color:red;
 }
 .badge {
     position: absolute;
@@ -219,4 +219,9 @@ h3 {
     float: right!important;
 }
 
-
+#sexanLeft90{
+    border-bottom: 50px solid #F5F5F5;
+    border-right: 70px solid transparent;
+    height: 0;
+    width: 250px;
+}

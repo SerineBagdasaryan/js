@@ -124,7 +124,7 @@
               </div>
 
               <button id="search" type="button" class="ht-btn ht-btn-default dropdown-toggle"><i class="fa fa-search"></i>Search Now</button>
-          </div>
+
           <div class="col-md-11 mt-5 text-line">
               <div class="col-md-11 mt-5 bckg-img"></div>
               <h5 class="title">LOREM IPSUM DOLOR</h5>
@@ -133,55 +133,44 @@
               <h5 class="title">Cras sit amet nibh libero, in gravida nulla. Nulla vel</h5>
               <button id="show"><b>SHOW NOW</b></button>
           </div>
-
+          </div>
       </div>
-        <div class="col-sm-8">
+        <div class="col-sm-9">
             <!-- CAR LISTING Block div start -->
             <div  class="row" style="margin-left: 20px">
+                <div  class="col-sm-12"  ><!-- cars Block div start -->
 
-                <div class="heading heading-2 m-b-lg-0">
-                    <h3 class="p-l-lg-20" style="background-color: ghostwhite">Used Cars</h3>
-                </div>
-                <div class="product-filter p-t-xs-20 p-l-xs-20" style="height: 100px">
-                    <div class="m-b-xs-10 pull-left" style="">
-                        <a href="car_grid.html"><i class="fa fa-th" style="color: black"></i></a>
-                        <a href="car_list.html" class="active"><i class="fa fa-th-list" style="color: black;margin-left: 20px"></i></a>
+                    <div class="col-sm-12" id="sexanLeft90" >
+                        <h5 class="">USED CARS </h5>
                     </div>
-                    <div class="pull-right">
-                        <div class="m-b-xs-10 m-r-lg-20 pull-left">
-                            <label class="pull-left p-t-lg-10 m-r-lg-5"><i class="fa fa-sort-alpha-asc" style="color: black; padding-bottom: 30px"></i>Filter : </label>
+                    <div class="col-sm-12" style="background-color: #F5F5F5;padding: 15px;">
+                        <div class="row">
+                            <div class="col-sm-1"><i class="fa fa-th text-dark " style="font-size:24px"></i></div>
+                            <div class="col-sm-1"><i class="fa fa-server text-dark " style="font-size:24px"></i></div>
+                            <div class="col-sm-4">
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-sort-alpha-asc  text-dark"></i>
+                                Filter :
+                                <select>
+                                    <option>Latest</option>
+                                    <option>Best Seller</option>
+                                    <option>Featured</option>
+                                    <option>Offer</option>
+                                </select>
 
-                                    <button class="dropdown-toggle form-item w-130" style="width: 100px; height: 30px ;padding-bottom: 30px;margin-left: 20px" type="button" id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Latest
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu7" style="">
-                                        <li>Offer</li>
-                                        <li>Best Seller</li>
-                                        <li>Featured</li>
-                                        <li>Latest</li>
-                                    </ul>
-
-                        </div>
-                        <div class="pull-left">
-                            <label class="pull-left p-t-lg-10 m-r-lg-5"><i class="fa fa-sort-alpha-asc" style="color: black"></i>Show : </label>
-                            <div class="select-wrapper pull-left">
-                                <div class="dropdown pull-left"style="margin-left: 10px">
-                                    <button class="dropdown-toggle form-item w-80" type="button"  style="width: 80px; height: 30px ;padding-bottom: 30px;margin-left: 20px" id="dropdownMenu8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        6
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu8">
-                                        <li>6</li>
-                                        <li>12</li>
-                                        <li>24</li>
-                                        <li>All</li>
-                                    </ul>
-                                </div>
+                                <i class="fa fa-sort-alpha-asc mr-5 text-dark"></i>
+                                Show :
+                                <select>
+                                    <option>6</option>
+                                    <option>12</option>
+                                    <option>24</option>
+                                    <option>All</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
 
         </div>
 
@@ -194,8 +183,10 @@
     </div>
     <div class="col-sm-4">
       <div ><img src="{{items.stars}}"style="width: 60px;height: 15px"></div>
-      <h3 style="color:#cc3333">{{items.price | currency: "$" : 0}}</h3>
+      <h5 style="color:#cc3333">{{items.price | currency: "$" : 0}}</h5>
+        <!--<a ng-href="#!/http://localhost:8080/tours/:id?/{{items.id}}">{{items.description}}</a>-->
         <a href="#!/fullDescription/fullDescription.html">{{items.description}}</a>
+
         <div class="row">
                 <div class="left" style= "background-color:#d9d9d9"><h6 style= "color:#404040"><i class="fa fa-clock-o" style="font-size:5px;color:gray"></i>
           {{items.year}}</h6></div>
