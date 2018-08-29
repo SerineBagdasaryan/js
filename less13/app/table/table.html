@@ -1,0 +1,36 @@
+<div class="container">
+    <table border="2">
+        <tr>
+            <td>Mark</td>
+            <td>Model</td>
+            <td>Year</td>
+            <td>Condition</td>
+            <td>Body</td>
+            <td>Tranmission</td>
+            <td>UseWay</td>
+            <td>Price</td>
+            <td>Description</td>
+            <td>Image</td>
+            <td>Delete</td>
+            <td>Edite</td>
+        </tr>
+
+        <tr ng-repeat="item in obj">
+            <td>{{item.make}}</td>
+            <td>{{item.model}}</td>
+            <td>{{item.year}}</td>
+            <td>{{item.condition}}</td>
+            <td>{{item.body}}</td>
+            <td>{{item.transmission}}</td>
+            <td>{{item.useWay}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.description}}</td>
+            <td><img src="{{item.image}}" style="height:300px; width: 400px"></td>
+            <td><button style="background-color: #0fa940">Delete</button></td>
+            <td><button style="background-color: #0fa940">Edite</button></td>
+
+
+        </tr>
+    </table>
+</div>
+
