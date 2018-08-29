@@ -2,6 +2,7 @@ var express = require('express');
 const fileUpload = require('express-fileupload');
 var MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
+var url='mongodb://localhost:27017/carShop';
 var app = express();
 app.use(fileUpload());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -16,22 +17,22 @@ app.get('/', function (req, res) {
 })
 
 // This responds a POST request for the homepage
-app.post('/uploadfile', function (req, res) {
+app.post('/upload', function(req, res) {   /* upload@ papki anunn e */
     if (!req.files)
         return res.status(400).send('No files were uploaded.');
 
-
     // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
-    var sampleFile = req.files.file_my;
+    let sampleFile = req.files.file;// inpuut dashti anunn
 
     // Use the mv() method to place the file somewhere on your server
-    sampleFile.mv('uploads/'+sampleFile.name, function(err) {
+
+    sampleFile.mv('file_upload/'+sampleFile.name, function(err) { /* en papki anynn vori mej petq e @knin uplod exac filern*/
         if (err)
             return res.status(500).send(err);
 
         res.send('File uploaded!');
     });
-})
+});
 
 // This responds a DELETE request for the /del_user page.
 app.delete('/del_user', function (req, res) {
@@ -41,7 +42,7 @@ app.delete('/del_user', function (req, res) {
 
 // This responds a GET request for the /list_user page.
 app.get('/api/cars', function (req, res) {
-    MongoClient.connect('mongodb://localhost:27017/carShop', function (err, client) {
+    MongoClient.connect(url, function (err, client) {
         if (err) throw err
 
         var db = client.db('carShop')
@@ -58,7 +59,7 @@ app.get('/api/cars', function (req, res) {
 // This responds a POST request for the homepage
 app.post('/create', function (req, res) {
 console.log(req.body);
-    MongoClient.connect('mongodb://localhost:27017/carShop', function (err, client) {
+    MongoClient.connect('url, function (err, client) {
         if (err) throw err
 
         var db = client.db('carShop')
