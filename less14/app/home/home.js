@@ -39,7 +39,7 @@ angular.module('myApp.home', ['ngRoute'])
                 carr: cars
             }
 
-            $http.post("http://localhost:8081/cars/update", data).then(function (requestHttp) {
+            $http.post("http://localhost:8081/cars/update", data).then(function (requestHttp) { //idnern enq uxarkum http://localhost:8081/cars/update in
                 // $scope.car = response;
                 console.log(requestHttp.status);
             });
