@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="input-group">
+    <span>Inn:</span> <input [formControl]="inn" type="text"  placeholder="Enter inn here">
+    <button class="search" (click)="searchInn()">Search</button>
+  </div>
+<div class="content" *ngIf="companyInfo$ | async as companyInfo">
+  <p>{{companyInfo.name}}</p>
+</div>
+</div>
+
